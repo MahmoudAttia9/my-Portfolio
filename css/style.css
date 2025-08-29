@@ -1,0 +1,228 @@
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+  --primary-color: #0d6efd; /* A bright, modern blue */
+  --background-color: #121212; /* A deep, near-black */
+  --surface-color: #1e1e1e; /* Color for cards and surfaces */
+  --text-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+section {
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+.section-title p {
+  margin-bottom: 0;
+  color: #c0c0c0;
+}
+
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+#main-nav {
+  transition: all 0.3s ease-in-out;
+  padding: 15px 0;
+  background: transparent;
+}
+#main-nav.navbar-scrolled {
+  background: rgba(30, 30, 30, 0.9);
+  padding: 10px 0;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+.nav-link {
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-link.active, .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://images.unsplash.com/photo-1522252234503-e356532cafd5?q=80&w=2070&auto=format&fit=crop) center center;
+  background-size: cover;
+  position: relative;
+}
+.hero-section h1 {
+    font-weight: 700;
+}
+.hero-section .typed-text {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.hero-section .typed-cursor {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+.btn-outline-light:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white !important;
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about-section {
+    background-color: var(--surface-color);
+}
+.profile-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.skills-icons i {
+    font-size: 3rem;
+    margin: 0 15px;
+    color: var(--primary-color);
+    transition: transform 0.3s;
+}
+.skills-icons i:hover {
+    transform: scale(1.2);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+.portfolio-item img {
+  transition: transform 0.5s ease;
+}
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+.portfolio-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  padding: 30px 20px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.portfolio-item:hover .portfolio-info {
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact-section {
+    background-color: var(--surface-color);
+}
+.social-icon {
+    font-size: 3rem;
+    margin: 0 20px;
+    color: var(--heading-color);
+    transition: color 0.3s, transform 0.3s;
+}
+.social-icon:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/*--------------------------------------------------------------
+# Modal Styling
+--------------------------------------------------------------*/
+.modal-content {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid #444;
+}
+.modal-header {
+    border-bottom: 1px solid #444;
+}
+.modal-header .modal-title {
+    color: var(--heading-color);
+}
+
+/*--------------------------------------------------------------
+# Back to Top Button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+.back-to-top:hover {
+  background: #298eff;
+}
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
